@@ -1,0 +1,38 @@
+package javaapplication7;
+import javax.swing.JOptionPane;
+        public class JavaApplication7 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        double[][] vetor = new double[15][7];
+        for (int i = 1; i <= 7; i++) {
+            for (int a = 0; a < 15; a++) {
+                String entrada = JOptionPane.showInputDialog("Digite o preço do Produto " + (a+ 1) + " para o dia " + i );
+                vetor[a][i- 1] = Double.parseDouble(entrada);
+            }
+        }
+        double[] vetor2 = new double[15];
+        for (int b= 0; b < 15; b++) {
+            double soma = 0;
+            for (int j = 0; j< 7; j++) {
+                soma += vetor[b][j];
+            }
+            vetor2[b] = soma / 7;
+        }
+
+        StringBuilder resultado = new StringBuilder();
+        resultado.append("Listagem do produto");
+        for (int c = 0; c <15; c++) {
+            resultado.append("Produto ").append(c+ 1).append(": R$ ").append(vetor2[c]).append("\n");
+        }
+
+        JOptionPane.showMessageDialog(null, resultado.toString());
+    }
+}
+
+    
+    
+

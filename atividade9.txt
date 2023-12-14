@@ -1,0 +1,34 @@
+ackage javaapplication9;
+import javax.swing.JOptionPane;
+        public class JavaApplication9 {
+
+      
+ 
+    public static void main(String[] args) {
+     
+        double[] notas = new double[4];
+
+          String entrada;
+        for (int i = 0; i < 4; i++) {
+            entrada = JOptionPane.showInputDialog("Digite a nota da disciplina " + (i + 1) + ":");
+            notas[i] = Double.parseDouble(entrada);
+        }
+
+   
+        double notabaixa = procurarnotamaisbaixa(notas);
+
+  
+        JOptionPane.showMessageDialog(null, "A nota mais baixa do aluno é: " + notabaixa);
+    }
+    private static double procurarnotamaisbaixa(double[] notas) {
+        double notabaixa = notas[0];
+
+        for (int i = 1; i < notas.length; i++) {
+            if (notas[i] < notabaixa) {
+                notabaixa = notas[i];
+            }
+        }
+
+        return notabaixa;
+    }
+}

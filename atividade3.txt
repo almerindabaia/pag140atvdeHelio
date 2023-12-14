@@ -1,0 +1,38 @@
+package javaapplication3;
+
+import javax.swing.JOptionPane;
+public class JavaApplication3{
+
+ 
+    public static void main(String[] args) {
+      
+   
+        int[]vetor = new int[20];
+        String entrada;
+        double reais;
+        
+    
+        for (int i = 0; i < 20; i++) {
+            entrada= JOptionPane.showInputDialog("Informe o saldo em reais para o cliente " + (i + 1) + ":");
+            reais = Double.parseDouble(entrada);
+            
+ 
+            int centavos= (int) (reais * 100);
+            
+            vetor[i] = centavos;
+        }
+
+     
+        StringBuilder resultado = new StringBuilder("Saldos em centavos:\n");
+        for (int i = 0; i < 20; i++) {
+            resultado.append("cliente ").append(i + 1).append(": ").append(vetor[i]).append(" centavos\n");
+        }
+
+        JOptionPane.showMessageDialog(null, resultado.toString());
+    }
+}
+
+
+
+
+   

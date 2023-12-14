@@ -1,0 +1,44 @@
+package javaapplication10;
+import javax.swing.JOptionPane;
+        public class JavaApplication10{
+
+     
+
+    public static void main(String[] args) {
+        int nume= Integer.parseInt(JOptionPane.showInputDialog("Informe o número de cheques usados no mês:"));
+
+        if (nume<= 0) {
+            JOptionPane.showMessageDialog(null, "Número de cheques inválido.");
+            System.exit(0);
+        }
+
+        double[] valores = new double[nume];
+
+        for (int i = 0; i < nume; i++) {
+            String entrada = JOptionPane.showInputDialog("Digite o valor gasto no cheque " + (i + 1) + ":");
+            valores[i] = Double.parseDouble(entrada);
+        }
+
+        StringBuilder mensagem = new StringBuilder("Lista de valores gastos em cheques:\n");
+        for (int i = 0; i < valores.length; i++) {
+            mensagem.append("Cheque ").append(i + 1).append(": R$ ").append(valores[i]).append("\n");
+        }
+        JOptionPane.showMessageDialog(null, mensagem.toString());
+
+ 
+        double maior= valores[0];
+        double menor = valores[0];
+
+        for (int i = 1; i < valores.length; i++) {
+            if (valores[i] > maior) {
+                maior = valores[i];
+            }
+
+            if (valores[i] < menor) {
+                menor = valores[i];
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, "Maior valor: " + maior+ "Menor valor: " + menor);
+    }
+}

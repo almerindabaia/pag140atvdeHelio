@@ -1,0 +1,40 @@
+package javaapplication8;
+import javax.swing.JOptionPane;
+        public class JavaApplication8{
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        double[] notas = new double[4];
+       String entrada;
+ 
+        for (int i = 0; i < 4; i++) {
+             entrada = JOptionPane.showInputDialog("Digite a nota da disciplina " + (i + 1) + ":");
+            notas[i] = Double.parseDouble(entrada);
+        }
+
+      
+        double notamaisalta = procurarnota(notas);
+
+        
+        JOptionPane.showMessageDialog(null, "A nota mais alta do aluno é: " + notamaisalta);
+    }
+
+  
+    private static double procurarnota(double[] notas) {
+        double notamaisalta = notas[0];
+
+        for (int i = 1; i < notas.length; i++) {
+            if (notas[i] > notamaisalta) {
+                notamaisalta = notas[i];
+            }
+        }
+
+        return notamaisalta;
+    }
+}
+
+    
+
+

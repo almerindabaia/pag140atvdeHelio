@@ -1,0 +1,57 @@
+package javaapplication4;
+
+import javax.swing.JOptionPane;
+public class JavaApplication4{
+
+ 
+    public static void main(String[] args) {
+      
+  
+ 
+    
+        int linhasA = 3;
+        int colunasA = 2;
+        int linhasB = 2;
+        int colunasB = 3;
+
+        int[][] matrizA = new int[linhasA][colunasA];
+        int[][] matrizB = new int[linhasB][colunasB];
+
+    
+        JOptionPane.showMessageDialog(null, "Preencha a matriz A 3x2");
+        for (int i = 0; i < linhasA; i++) {
+            for (int j = 0; j < colunasA; j++) {
+                String input = JOptionPane.showInputDialog("Informe o elemento [" + (i + 1) + "][" + (j + 1) + "] da matriz:");
+                matrizA[i][j] = Integer.parseInt(input);
+            }
+        }
+
+   
+        JOptionPane.showMessageDialog(null, "Preencha a matriz B 2x3");
+        for (int i = 0; i < linhasB; i++) {
+            for (int j = 0; j < colunasB; j++) {
+                String input = JOptionPane.showInputDialog("Informe o elemento [" + (i + 1) + "][" + (j + 1) + "] da matriz:");
+                matrizB[i][j] = Integer.parseInt(input);
+            }
+        }
+        int[][] resultado = new int[linhasA][colunasB];
+        for (int i = 0; i < linhasA; i++) {
+            for (int j = 0; j < colunasB; j++) {
+                for (int k = 0; k < colunasA; k++) {
+                    resultado[i][j] += matrizA[i][k] * matrizB[k][j];
+                }
+            }
+        }
+
+        StringBuilder resultadoString = new StringBuilder("Matriz Resultado 3x3\n");
+        for (int i = 0; i < linhasA; i++) {
+            for (int j = 0; j < colunasB; j++) {
+                resultadoString.append(resultado[i][j]).append("\t");
+            }
+            resultadoString.append("\n");
+        }
+
+        // Exibindo o resultado usando JOptionPane
+        JOptionPane.showMessageDialog(null, resultadoString.toString());
+    }
+}

@@ -1,0 +1,51 @@
+package javaapplication5;
+
+import javax.swing.JOptionPane;
+public class JavaApplication5 {
+
+ 
+
+    public static void main(String[] args) {
+    
+        int[][] matrizA = {
+            {1, 1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 2, 1},
+            {1, 2, 3, 3, 2, 1},
+            {1, 2, 3, 3, 2, 1},
+            {1, 2, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1, 1}
+        };
+
+       
+        int[][] matrizB = {
+            {1, 1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 2, 1},
+            {1, 2, 3, 3, 2, 1},
+            {1, 2, 3, 3, 2, 1},
+            {1, 2, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1, 1}
+        };
+
+      
+        int[][] resultado = new int[6][6];
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                for (int k = 0; k < 6; k++) {
+                    resultado[i][j] += matrizA[i][k] * matrizB[k][j];
+                }
+            }
+        }
+        StringBuilder resultadoString = new StringBuilder("Matriz Resultado (6x6):\n");
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                resultadoString.append(resultado[i][j]).append("\t");
+            }
+            resultadoString.append("\n");
+        }
+        JOptionPane.showMessageDialog(null, resultadoString.toString());
+    }
+}
+
+     
+
+      

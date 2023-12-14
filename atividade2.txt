@@ -1,0 +1,33 @@
+package javaapplication2;
+
+import javax.swing.JOptionPane;
+public class JavaApplication2 {
+
+ 
+    public static void main(String[] args) {
+          
+        int[] vetor = new int[30];
+        String entrada;
+        int menorvolume = Integer.MAX_VALUE,diamenor= 0;
+
+;
+       
+        for (int i = 0; i < 30; i++) {
+            entrada= JOptionPane.showInputDialog("Informe o número de carros para o dia " + (i + 1) + " de setembro:");
+            vetor[i] = Integer.parseInt(entrada);
+        }
+
+     
+        for (int j = 0; j < 30; j++) {
+            if (vetor[j] < menorvolume) {
+                menorvolume = vetor[j];
+                diamenor = j + 1;  
+            }
+        }
+
+        
+        JOptionPane.showMessageDialog(null,  "O menor volume de carros ocorreu no dia " + diamenor+ " de setembro.");
+}
+
+}
+   

@@ -1,0 +1,46 @@
+package javaapplication6;
+import javax.swing.JOptionPane;
+        public class JavaApplication6 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+      
+        int linhas = 5;
+        int colunas = 5;
+
+        int[][] matriz = new int[linhas][colunas];
+
+        preencherMatriz(matriz);
+
+
+        exibirMatriz(matriz);
+    }
+
+  
+    private static void preencherMatriz(int[][] matriz) {
+        int valor = 1;
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = valor;
+                valor++;
+            }
+        }
+    }
+    private static void exibirMatriz(int[][] matriz) {
+        StringBuilder mensagem = new StringBuilder("Matriz 5x5:\n");
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                mensagem.append(matriz[i][j]).append("\t");
+            }
+            mensagem.append("\n");
+        }
+        JOptionPane.showMessageDialog(null, mensagem.toString());
+    }
+}
+
+    
